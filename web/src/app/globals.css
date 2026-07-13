@@ -1,0 +1,119 @@
+@import "tailwindcss";
+
+/* ---------------------------------------------------------------------------
+   Hala design system
+   Warm desert-neutral base, deep teal primary, terracotta accent.
+   All UI colour must come from these tokens — never raw hex in components.
+--------------------------------------------------------------------------- */
+
+:root {
+  /* Base surfaces */
+  --sand-25: #fdfcf9;
+  --sand-50: #faf8f3;
+  --sand-100: #f4f0e7;
+  --sand-200: #e9e2d3;
+  --sand-300: #d8cdb8;
+
+  /* Ink (text) */
+  --ink-900: #211c15;
+  --ink-700: #3f382e;
+  --ink-500: #6f6656;
+  --ink-400: #948a78;
+
+  /* Primary — deep teal (midnight oasis) */
+  --teal-900: #0b332f;
+  --teal-800: #104741;
+  --teal-700: #135951;
+  --teal-600: #1a6e64;
+  --teal-100: #dcebe7;
+  --teal-50: #eef5f3;
+
+  /* Accent — terracotta */
+  --terra-700: #a44f2e;
+  --terra-600: #bd5e39;
+  --terra-500: #cf7350;
+  --terra-100: #f8e7de;
+
+  /* Support */
+  --gold-500: #c9973f;
+  --success-600: #2e7d5b;
+  --success-100: #e0f0e8;
+  --danger-600: #b3402f;
+  --danger-100: #f9e5e1;
+
+  --background: var(--sand-50);
+  --foreground: var(--ink-900);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-sand-25: var(--sand-25);
+  --color-sand-50: var(--sand-50);
+  --color-sand-100: var(--sand-100);
+  --color-sand-200: var(--sand-200);
+  --color-sand-300: var(--sand-300);
+
+  --color-ink-900: var(--ink-900);
+  --color-ink-700: var(--ink-700);
+  --color-ink-500: var(--ink-500);
+  --color-ink-400: var(--ink-400);
+
+  --color-teal-900: var(--teal-900);
+  --color-teal-800: var(--teal-800);
+  --color-teal-700: var(--teal-700);
+  --color-teal-600: var(--teal-600);
+  --color-teal-100: var(--teal-100);
+  --color-teal-50: var(--teal-50);
+
+  --color-terra-700: var(--terra-700);
+  --color-terra-600: var(--terra-600);
+  --color-terra-500: var(--terra-500);
+  --color-terra-100: var(--terra-100);
+
+  --color-gold-500: var(--gold-500);
+  --color-success-600: var(--success-600);
+  --color-success-100: var(--success-100);
+  --color-danger-600: var(--danger-600);
+  --color-danger-100: var(--danger-100);
+
+  --font-sans: var(--font-inter), "IBM Plex Sans Arabic", "Segoe UI",
+    "Noto Sans Arabic", system-ui, sans-serif;
+  --font-display: var(--font-fraunces), "Noto Naskh Arabic", Georgia, serif;
+
+  --shadow-card: 0 1px 2px rgb(33 28 21 / 0.04), 0 4px 16px rgb(33 28 21 / 0.05);
+  --shadow-card-hover: 0 2px 4px rgb(33 28 21 / 0.06),
+    0 12px 32px rgb(33 28 21 / 0.1);
+  --shadow-header: 0 1px 0 rgb(33 28 21 / 0.06);
+
+  --radius-card: 1rem;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--teal-100);
+  color: var(--teal-900);
+}
+
+/* Accessible focus ring everywhere */
+:focus-visible {
+  outline: 2px solid var(--teal-600);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Hide horizontal scrollbars on carousels without killing scroll */
+.scroll-row {
+  scrollbar-width: none;
+}
+.scroll-row::-webkit-scrollbar {
+  display: none;
+}

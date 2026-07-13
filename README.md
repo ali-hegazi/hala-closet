@@ -2,6 +2,41 @@
 
 > Buy and sell pre-loved fashion in the UAE.
 
+**🌐 Live website: https://hala-psi-eight.vercel.app**
+
+This repo now contains two frontends sharing one (planned) Supabase backend:
+
+| Directory | What it is | Status |
+|---|---|---|
+| `/` (root) | Expo React Native mobile app | Mock-data prototype |
+| `web/` | Next.js 16 website, deployed on Vercel | Live, demo data |
+| `supabase/` | Database schema + RLS policies shared by both | Ready to run, not yet provisioned |
+
+## Website (`web/`)
+
+Next.js 16 (App Router, Turbopack) + Tailwind v4. Full marketplace UI: home feed
+with curated sections, search with filters (category, brand, size, condition,
+colour, price, emirate + geolocation), listing pages with offers/chat entry
+points, seller profiles with reviews, multi-step sell flow, inbox with in-chat
+offers, favourites, settings (incl. Arabic-ready language switcher and
+prayer-time quiet hours), and auth screens wired for Supabase.
+
+```bash
+cd web
+npm install
+npm run dev        # http://localhost:3000
+```
+
+Runs in **demo mode** (seeded data, no persistence) until Supabase env vars are
+set in `web/.env.local`:
+
+```
+NEXT_PUBLIC_SUPABASE_URL=...
+NEXT_PUBLIC_SUPABASE_ANON_KEY=...
+```
+
+Deploys to Vercel from `web/` (`vercel deploy --prod`).
+
 Hala Closet is a peer-to-peer second-hand fashion marketplace for the UAE — think Vinted, adapted for the local market. Buyers and sellers browse listings, chat, and arrange payment and collection directly with each other. No in-app payments, no escrow, no shipping integration.
 
 ---
